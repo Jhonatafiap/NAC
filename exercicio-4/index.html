@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ficha Cadastral</title>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                font-family: Arial, sans-serif;
+            }
+            h1 {
+                font-weight: bolder;
+                color: darkgray;
+                text-align: center;
+                font-size: 40px;
+                margin: 40px  0;
+            }
+            form {
+                width: 70%;
+                margin: 20px auto;
+            }
+            form fieldset {
+                padding: 20px;
+            }
+            .container-form {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .container-form > div {
+                width: 100%;
+                margin: 5px 0;
+            }
+            form div.ipt-align {
+                width: 45%;
+                margin-right: 5%;
+            }
+            form label {
+                display: block;
+                font-size: 14px;
+            }
+            form input, select {
+                border: 1px solid #333;
+                background-color: #ddd;
+                width: 90%;
+                padding: 5px 20px;
+                display: block;
+            }
+            div.civil {
+                display: flex;
+                width: 40%;
+                align-items: center;
+            }
+            div.civil input {
+                width: 15px;
+                margin-right: 20px;
+                margin-left: 5px;
+            }
+            div.civil input:checked {
+                background-color: blue;
+            }
+
+            input[type="submit"] {
+                display: block;
+                width: 90px;
+                padding: 10px;
+                margin: 0 auto;
+                border-radius: 5px;
+                border-color: #989898;
+                background-image: linear-gradient(to bottom, #eee 50%, #ccc);
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Ficha Cadastral</h1>
+        </header>
+        <main>
+            <form>
+                <fieldset>
+                    <legend>Dados Pessoais:</legend>
+
+                    <div class="container-form">
+
+                        <div>
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="ipt" name="nome" id="nome" required/>    
+                        </div>                        
+                        
+                        <div class="ipt-align">
+                            <label for="rg">RG:</label>
+                            <input type="text" class="ipt" name="rg" id="rg" required/>
+                        </div>
+                        
+                        <div class="ipt-align">
+                            <label for="cpf">CPF:</label>
+                            <input type="text" class="ipt" name="cpf" id="cpf" required/>
+                        </div>
+
+                        <div>
+                            <label for="endereco">Endereço:</label>
+                            <input type="text" class="ipt" name="endereco" id="endereco" required/>
+                        </div>
+                        
+                        <div class="ipt-align">
+                            <label for="genero">Genero:</label>
+                            <select name="genero" id="genero">
+                                <option value="fem">Feminino</option>
+                                <option value="masc">Masculino</option>
+                            </select>
+                        </div>
+                        
+                        <div class="ipt-align">
+                            <label for="nascimento">Data de Nascimento:</label>
+                            <input type="text" class="ipt" name="nascimento" id="nascimento" required/>
+                        </div>
+                        
+                        <div>
+                            <label>Situação Civil:</label>
+                        </div>
+                        <div class="civil">
+                            <label for="solteiro">Solteiro(a)</label>
+                            <input type="radio" name="civil" id="solteiro" value="solteiro" required>
+                            
+                            <label for="casado">Casado(a)</label>
+                            <input type="radio" name="civil" id="casado" value="casado" required>
+
+                            <label for="viuvo">Viuvo(a)</label>
+                            <input type="radio" name="civil" id="viuvo" value="viuvo" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="Cadastrar" class='submit' name="enviar" required>                
+                </fieldset>
+            </form>
+        </main>   
+    </body>
+</html>
